@@ -44,7 +44,7 @@ then
   IFS='|' read -r ATOMIC_NUM ELEMENT_TYPE ATOMIC_WEIGHT MELTING_POINT BOILING_POINT <<< "$PROPERTIES_BY_ATOMIC_NUMBER"
   IFS='|' read -r ATMOIC_NUM SYMBOL NAME <<< "$ELEMENT_BY_ATOMIC_NUMBER"
 
-  echo "The element with atomic number $ATOMIC_NUM is $NAME ($SYMBOL). It's a $ELEMENT_TYPE, with a mass of $ATOMIC_WEIGHT amu. $ELEMENT_TYPE has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
+  echo "The element with atomic number $ATOMIC_NUM is $NAME ($SYMBOL). It's a $ELEMENT_TYPE, with a mass of $ATOMIC_WEIGHT amu. $NAME has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
 
   fi
 
