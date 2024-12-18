@@ -20,7 +20,7 @@ then
     ATOMIC_NUMBER_BY_SYMBOL=$($PSQL "SELECT ATOMIC_NUMBER FROM ELEMENTS WHERE SYMBOL='$1'")
     if [[ -z $ATOMIC_NUMBER_BY_SYMBOL ]]
     then
-      INVALID_ELEMENT "No such atomic symbol found"
+      INVALID_ELEMENT "I could not find that element in the database."
     else
       ATOMIC_NUMBER=$ATOMIC_NUMBER_BY_SYMBOL;
     fi 
@@ -29,12 +29,12 @@ then
     ATOMIC_NUMBER_BY_NAME=$($PSQL "SELECT ATOMIC_NUMBER FROM ELEMENTS WHERE NAME='$1'")
     if [[ -z $ATOMIC_NUMBER_BY_NAME ]]
     then
-      INVALID_ELEMENT "No such atomic symbol found"
+      INVALID_ELEMENT "I could not find that element in the database."
     else
       ATOMIC_NUMBER=$ATOMIC_NUMBER_BY_NAME;
     fi 
   else
-    INVALID_ELEMENT "Invalid input pattern"
+    INVALID_ELEMENT "I could not find that element in the database."
   fi
 
   if [[ $ATOMIC_NUMBER -ne 0 ]]
