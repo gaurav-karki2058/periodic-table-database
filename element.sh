@@ -19,7 +19,9 @@ then
     else
       echo $ARGUMENT_QUERY_RESULT
     fi
-  
+  elif [[ $1 =~ ^[A-Z][a-z]?$ ]]
+  then
+  echo "yay"
 
   fi
 fi
