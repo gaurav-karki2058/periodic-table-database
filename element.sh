@@ -12,13 +12,8 @@ then
   ATOMIC_NUMBER=0
   if [[ $1 =~ ^[0-9]+$ ]]
   then
-    QUERY_BY_ATOMIC_NUMBER=$($PSQL "SELECT * FROM PROPERTIES WHERE ATOMIC_NUMBER=$1")
-    if [[ -z $QUERY_BY_ATOMIC_NUMBER ]]
-    then
-      INVALID_ELEMENT "Not a valid atomic number"
-    else
-      echo $QUERY_BY_ATOMIC_NUMBER
-    fi
+    ATOMIC_NUMBER=$1;
+    
   elif [[ $1 =~ ^[A-Z][a-z]?$ ]]
   then
     ATOMIC_NUMBER_BY_SYMBOL=$($PSQL "SELECT ATOMIC_NUMBER FROM PROPERTIES WHERE SYMBOL=$1")
