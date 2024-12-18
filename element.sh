@@ -26,7 +26,7 @@ then
     fi 
   elif [[ $1 =~ ^[A-Z][a-z]*$ ]]
   then
-    ATOMIC_NUMBER_BY_NAME=$($PSQL "SELECT ATOMIC_NUMBER FROM ELEMENTS WHERE NAME=$1")
+    ATOMIC_NUMBER_BY_NAME=$($PSQL "SELECT ATOMIC_NUMBER FROM ELEMENTS WHERE NAME='$1'")
     if [[ -z $ATOMIC_NUMBER_BY_NAME ]]
     then
       INVALID_ELEMENT "No such atomic symbol found"
